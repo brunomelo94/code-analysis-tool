@@ -1,7 +1,10 @@
 "use server";
 
 import { codeAnalysisSchema } from "./schema";
+import { config as dotenvConfig } from 'dotenv';
 import OpenAI from "openai";
+
+dotenvConfig({ path: './../../.env' });
 
 export async function analyzeCodeAction(formData: FormData) {
   try {
