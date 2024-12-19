@@ -1,0 +1,17 @@
+{
+  "name": "my-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.5.11",
+  "scripts": {
+    "dev": "turbo run dev --filter=*",
+    "build": "turbo run build --filter=*",
+    "start": "turbo run start --filter=*",
+    "lint": "turbo run lint --filter=*",
+    "zip": "zip -r code_analysis.zip . -x 'node_modules/**' '.git/**' '.turbo/**' '.gitignore' '*.zip'",
+    "7zip": "7z a -xr!node_modules -xr!.git -xr!.turbo -xr!.env.local -xr!*.zip code_analysis.zip ."
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  }
+}
